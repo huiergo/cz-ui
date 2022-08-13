@@ -1,5 +1,5 @@
 // 源文件
-import React from 'react';
+import React,{PropsWithChildren} from 'react';
 import t from 'prop-types'
 
 export interface AlertProps{
@@ -20,7 +20,7 @@ const kinds:KindMap={
     warning: "purple"
 }
 
-const Alert: React.FC<AlertProps>=({children, kind="info",...rest})=>(
+const Alert: React.FC<PropsWithChildren<AlertProps>>=({children, kind="info",...rest})=>(
     <div
         className={prefixCls}
         style={{background:kinds[kind]}}

@@ -2,7 +2,7 @@
   "name": "cz-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,12 +11,20 @@
     "build:site": "rimraf doc-site && dumi build",
     "preview:site": "cross-env SITE_BUILD_ENV=PREVIEW npm run build:site && serve doc-site",
     "deploy:site": "npm run build:site && gh-pages -d doc-site",
-    "build:types": "tsc -p tsconfig.build.json && cpr lib esm"
+    "build:types": "tsc -p tsconfig.build.json && cpr lib esm",
+    "clean": "rimraf lib esm dist",
+    "build": "npm run clean && npm run build:types && gulp"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@types/react": "^18.0.17",
@@ -27,6 +35,8 @@
     "cz-conventional-changelog": "^3.3.0",
     "dumi": "^1.1.47",
     "gh-pages": "^4.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
@@ -58,6 +68,8 @@
     }
   },
   "dependencies": {
+    "@babel/runtime": "^7.18.9",
+    "cpr": "^3.0.1",
     "prop-types": "^15.8.1"
   }
 }
