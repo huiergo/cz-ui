@@ -4,3 +4,6 @@
 .umi
 .umi-production
 .env.local
+
+/lib
+/esm
