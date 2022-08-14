@@ -14,5 +14,5 @@
         "skipLibCheck":true
     },
     "include": ["src","typings.d.ts"],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules","lib", "esm", "dist","**/__test__"]
 }
