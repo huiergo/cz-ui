@@ -100,5 +100,18 @@
     "esm/**/style/*",
     "lib/**/style/*",
     "*.less"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "https://github.com/huiergo/cz-ui",
+  "authors": {
+    "name": "huiergo",
+    "email": "1063229610@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huiergo/cz-ui.git"
+  }
 }
